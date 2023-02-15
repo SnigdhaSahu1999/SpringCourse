@@ -6,15 +6,75 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <!-- Define your beans here -->
-    <bean id = "myCoach"
-    	  class = "com.snigdha.springdemo.TrackCoach">
+    
+    <!-- loading the properties file: sport.properties -->
+    <context:property-placeholder location = "classpath:sport.properties"/>
+    
+    
+    <!-- Define the dependency bean (Dependency Injection Example)-->
+    
+    <!-- Creation of HappyFortuneService Object -->
+    <bean id = "myFortuneService"
+    	  class= "com.snigdha.springdemo.HappyFortuneService">
     </bean>
+    
+    
+    
+    <!-- Creation of TrackCoach Object, with HappyFortuneService object passed in it's constructor
+    Constructor Injection -->
+    <bean id = "myTCoach"
+    	  class = "com.snigdha.springdemo.TrackCoach">
+    	  
+    	  <!-- Set up constructor injection -->
+    	  <constructor-arg ref = "myFortuneService"/>
+    </bean>
+    
+
+
+
+
+    <!-- Define your beans here (IOC Example) -->
+	<!--  <bean id = "myCoach"
+    	  class = "com.snigdha.springdemo.TrackCoach">
+    </bean>  
     
     <bean id = "myCoach1"
     	  class = "com.snigdha.springdemo.BaseballCoach">
     </bean>
+    
+    //Practice Activity #1
+    <bean id = "myCoach2"
+    	  class = "com.snigdha.springdemo.BadmintonCoach">
+    </bean> -->
+    
+    
+    
+    <!-- Define your beans here for Setter Injection  -->
+    <bean id = "myCricketCoach"
+    	  class = "com.snigdha.springdemo.CricketCoach">
+    	  
+    	  <!-- Set up our setter injection, calls setFortuneService() setter method of the CricketCoach class -->
+    	  <property name="fortuneService" ref="myFortuneService"/>
+    	  
+    	  <!-- Hard Coded -->
+    	  <!-- inject literal values, calls setEmailAddress,setTeam setter methods of the CricketCoach class -->
+    	 <!-- <property name="emailAddress" value="thesnigdhasahu@gmail.com"/>
+    	  <property name="team" value="Sunrisers Hyderabad"/>   -->
+    	  
+    	  <!-- Inject literal values by properties file -->
+    	  <property name="emailAddress" value="${foo.email}"/>
+    	  <property name="team" value="${foo.team}"/> 
+    </bean>
+    
+    <!--  Practice Activity #2 -->
+    <bean id = "myCoach2"
+    	  class = "com.snigdha.springdemo.BadmintonCoach"
+    	  scope="prototype">
+    	  
+    	  <!-- Set up constructor injection -->
+    	  <constructor-arg ref = "myFortuneService"/>
+    </bean>
+    
     
 </beans>
 

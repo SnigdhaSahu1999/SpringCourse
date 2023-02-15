@@ -23,9 +23,26 @@ public class HelloSpringApp {
 		
 		
 		//Call methods for Dependency Injection Demonstration
-		Coach myTrackCoach = context.getBean("myTCoach",Coach.class);
+		/*Coach myTrackCoach = context.getBean("myTCoach",Coach.class);
 		System.out.println(myTrackCoach.getDailyWorkout());
-		System.out.println(myTrackCoach.getDailyFortune());
+		System.out.println(myTrackCoach.getDailyFortune());*/
+		
+		//Practice Activity #2
+		/*Coach theBadmintonCoach = context.getBean("myCoach2",Coach.class);
+		System.out.println(theBadmintonCoach.getDailyWorkout());
+		System.out.println(theBadmintonCoach.getDailyFortune());
+		System.out.println(theBadmintonCoach.getDailyRandomFortune());*/
+		
+		//Practice Activity #3
+		Coach theBadmintonCoach = context.getBean("myCoach2",Coach.class);
+		Coach theBadCoach = context.getBean("myCoach2",Coach.class);
+		boolean result = (theBadmintonCoach == theBadCoach);
+		
+		System.out.println("\nPointing to the same object: " + result);
+		
+		System.out.println("\nMemory location for theBadmintonCoach: "+ theBadmintonCoach);
+		
+		System.out.println("\nMemory location for theBadCoach: "+ theBadCoach + "\n"  );
 		// close the context
 		context.close();
 	}
