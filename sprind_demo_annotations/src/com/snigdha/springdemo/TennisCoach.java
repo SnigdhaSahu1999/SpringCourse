@@ -2,7 +2,10 @@ package com.snigdha.springdemo;
 
 import org.springframework.stereotype.Component;
 
-@Component("thatSillyCoach")
+/*iving bean id in the annotation
+@Component("thatSillyCoach")*/
+
+@Component
 public class TennisCoach implements Coach {
 
 	@Override
