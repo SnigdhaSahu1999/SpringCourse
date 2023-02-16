@@ -2,7 +2,7 @@ package com.snigdha.springdemo;
 
 import org.springframework.stereotype.Component;
 
-/*iving bean id in the annotation
+/*giving bean id in the annotation
 @Component("thatSillyCoach")*/
 
 @Component
