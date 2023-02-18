@@ -2,7 +2,8 @@ package com.snigdha.springdemo;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
+@Component  //Spring can auto scan and find this implementation for the Spring container
 public class HappyFortuneService implements FortuneService {
 
 	@Override
