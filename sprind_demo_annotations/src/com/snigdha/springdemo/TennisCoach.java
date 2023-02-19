@@ -11,10 +11,25 @@ public class TennisCoach implements Coach {
 	
 	private FortuneService fortuneService;
 	
-	@Autowired
+	
+	/*@Autowired  // Spring will find a bean that implements FortuneService
+		//Constructor Injection
 	public TennisCoach(FortuneService theFortuneService) {
 		
 		fortuneService = theFortuneService;
+	}*/
+	
+	
+	//define a default constructor
+	public TennisCoach() {
+		System.out.println("TennisCoach: inside default constructor");
+	}
+	
+	@Autowired
+	//Setter Injection
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("TennisCoach: inside Setter method");
+		this.fortuneService = fortuneService;
 	}
 
 	@Override
