@@ -13,7 +13,7 @@ public class TennisCoach implements Coach {
 	
 	
 	/*@Autowired  // Spring will find a bean that implements FortuneService
-		//Constructor Injection
+	//Constructor Injection
 	public TennisCoach(FortuneService theFortuneService) {
 		
 		fortuneService = theFortuneService;
