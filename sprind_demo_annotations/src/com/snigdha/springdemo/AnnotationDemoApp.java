@@ -1,6 +1,7 @@
 package com.snigdha.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 public class AnnotationDemoApp {
 
@@ -9,8 +10,9 @@ public class AnnotationDemoApp {
 		//read spring config file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		//get the bean from spring container
-		Coach theCoach = context.getBean("tennisdsCoach",Coach.class);
+		//get the bean(object)  from spring container
+		//"tennisCoach" id is created automatically bcoz we are usimg @Component in TennisCoach class
+		Coach theCoach = context.getBean("tennisCoach",Coach.class);
 		
 		//Activity -4
 		//Coach theBadmintonCoach = context.getBean("badmintonCoach",Coach.class);
