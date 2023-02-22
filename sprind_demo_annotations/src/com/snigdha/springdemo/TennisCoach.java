@@ -13,7 +13,7 @@ public class TennisCoach implements Coach {
 	
 	
 	/*@Autowired  // Spring will find a bean that implements FortuneService
-	//Constructor Injection
+		//Constructor Injection
 	public TennisCoach(FortuneService theFortuneService) {
 		
 		fortuneService = theFortuneService;
@@ -25,10 +25,17 @@ public class TennisCoach implements Coach {
 		System.out.println("TennisCoach: inside default constructor");
 	}
 	
-	@Autowired
+	//@Autowired
 	//Setter Injection
-	public void setFortuneService(FortuneService fortuneService) {
+	/*public void setFortuneService(FortuneService fortuneService) {
 		System.out.println("TennisCoach: inside Setter method");
+		this.fortuneService = fortuneService;
+	}*/
+	
+	@Autowired
+	//Method Injection
+	public void doSomeCrazyStuff(FortuneService fortuneService) {
+		System.out.println("TennisCoach: inside doSomeCrazyStuff");
 		this.fortuneService = fortuneService;
 	}
 
