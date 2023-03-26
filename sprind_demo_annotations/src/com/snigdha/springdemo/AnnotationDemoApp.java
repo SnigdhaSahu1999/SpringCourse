@@ -12,15 +12,15 @@ public class AnnotationDemoApp {
 		
 		//get the bean(object)  from spring container
 		//"tennisCoach" id is created automatically bcoz we are usimg @Component in TennisCoach class
-		Coach theCoach = context.getBean("assignmentCoach",Coach.class);
+		//Coach theCoach = context.getBean("tennisCoach",Coach.class);
 		
 		//Activity -4
-		//Coach theBadmintonCoach = context.getBean("badmintonCoach",Coach.class);
+		Coach theBadmintonCoach = context.getBean("badmintonCoach",Coach.class);
 		
 		//call a method on the bean
-		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theBadmintonCoach.getDailyWorkout());
 		
-		System.out.println(theCoach.getDailyFortune());
+		System.out.println(theBadmintonCoach.getDailyFortune());
 		
 		//Activity -4
 		//System.out.println(theBadmintonCoach.getDailyWorkout());
