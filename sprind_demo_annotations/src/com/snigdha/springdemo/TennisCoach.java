@@ -1,7 +1,11 @@
 package com.snigdha.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /*giving bean id in the annotation
@@ -43,6 +47,18 @@ public class TennisCoach implements Coach {
 		System.out.println("TennisCoach: inside doSomeCrazyStuff");
 		this.fortuneService = fortuneService;
 	}*/
+	
+	//define my init method (called after bean is created)
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println("TennisCoach: inside of doMyStartuoStuff()");
+	}
+	
+	//define my destroy method (called before bean is destroyed)
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println("TennisCoach: inside of doMyCleanupStuff()");
+	}
 
 	@Override
 	public String getDailyWorkout() {
